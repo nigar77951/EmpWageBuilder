@@ -1,6 +1,6 @@
 
 public class EmpWageBuilder {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
         System.out.println("...to Calculate Employee wage for full time if present...");
 
@@ -25,5 +25,5 @@ public class EmpWageBuilder {
         }
         empWage = empHrs * EMP_RATE_PER_HR;
         System.out.println("Employee Wage : " + empWage);
-	}
+    }
 }
