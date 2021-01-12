@@ -5,18 +5,15 @@ public class EmpWageBuilder {
     public static final int NUM_OF_WORKING_DAYS = 20;
     public static final int MAX_HRS_IN_MONTH = 100;
 
-    public static void main(String[] args) throws Exception {
-
-    	System.out.println("...to Calculate Employee wage for full time or part time based on no. of working days and hours if present...");
-
-        // Initialization
+	public static int calcEmpWageForCompany(String company, int empRate, int numOfDays, int maxHrs) {
+		   // Initialization
         int empHrs = 0;
         int totalEmpWage = 0;
         int totalWorkingDays = 0;
         int totalEmpHrs = 0;
 
         // random function
-        while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS) {
+        while (totalEmpHrs <= maxHrs && totalWorkingDays < numOfDays) {
             totalWorkingDays++;
             int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 
@@ -35,7 +32,13 @@ public class EmpWageBuilder {
             totalEmpHrs += empHrs;
             System.out.println("Day: " + totalWorkingDays + "\tEmp Hr: " + empHrs);
         }
-        totalEmpWage = totalEmpHrs * EMP_RATE_PER_HR;
-        System.out.println("Total Employee Wage: " + totalEmpWage);
-    }
+        totalEmpWage = totalEmpHrs * empRate;
+        System.out.println("Total Employee Wage for a company: " +company+" is: "+ totalEmpWage);
+		return totalEmpWage;
+	}
+	public static void main(String[] args) {
+		calcEmpWageForCompany("Microsoft", 20, 2, 10);
+		calcEmpWageForCompany("Amazon", 30, 3, 10);
+
+	}
 }
