@@ -1,14 +1,11 @@
 public class EmpWageBuilder {
-	public static final int IS_PART_TIME = 1;
+    public static final int IS_PART_TIME = 1;
     public static final int IS_FULL_TIME = 2;
-    public static final int EMP_RATE_PER_HR = 20;
-    public static final int NUM_OF_WORKING_DAYS = 20;
-    public static final int MAX_HRS_IN_MONTH = 100;
 
-    //method to compute wage
-    public static int computeEmpWage() {
+    // method for wage computation
+    public static int computeEmpWage(String company, int empRatePerHr, int noOfWorkingDays, int maxHrsPeronth) {
 
-		// Variables
+        // Variables
         int empHrs = 0;
         int empWage = 0;
         int totalEmpWage = 0;
@@ -16,11 +13,11 @@ public class EmpWageBuilder {
         int totalEmpHrs = 0;
 
         // Computation
-        while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS) {
+        while (totalEmpHrs <= maxHrsPeronth && totalWorkingDays < noOfWorkingDays) {
             totalWorkingDays++;
             int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 
-		    // Case Checking
+			 // Case Checking
             switch (empCheck) {
                 case IS_PART_TIME:
                     empHrs = 4;
@@ -35,14 +32,16 @@ public class EmpWageBuilder {
             totalEmpHrs += empHrs;
             System.out.println("Day: " + totalWorkingDays + "\tEmp Hr: " + empHrs);
         }
-        return totalEmpWage = totalEmpHrs * EMP_RATE_PER_HR;
+        totalEmpWage = totalEmpHrs * empRatePerHr;
+        System.out.println("Total Employee Wage for company " + company + ": " + totalEmpWage + "\n");
+        return totalEmpWage;
     }
 
-	//main method
+	//main
     public static void main(String[] args) throws Exception {
 
-        // Welcome message
-        System.out.println("...Employee Wage Builder code refactor...");
-        System.out.println("Total Employee Wage: " + computeEmpWage());
+        System.out.println("...Calc Emp wage for multiple companies...");
+        computeEmpWage("Dmart", 20, 2, 10);
+        computeEmpWage("Reliance", 10, 4, 20);
     }
 }
