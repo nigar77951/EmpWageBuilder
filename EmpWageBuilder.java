@@ -2,12 +2,25 @@ public class EmpWageBuilder {
     public static final int IS_PART_TIME = 1;
     public static final int IS_FULL_TIME = 2;
 
-    // method for wage computation
-    public static int computeEmpWage(String company, int empRatePerHr, int noOfWorkingDays, int maxHrsPeronth) {
+    // Variables
+    private final String company;
+    private final int empRatePerHr;
+    private final int noOfWorkingDays;
+    private final int maxHrsPeronth;
+
+    // Constructor of mtd EmpWageBuilder
+    public EmpWageBuilder(String company, int empRatePerHr, int noOfWorkingDays, int maxHrsPeronth) {
+        this.company = company;
+        this.empRatePerHr = empRatePerHr;
+        this.noOfWorkingDays = noOfWorkingDays;
+        this.maxHrsPeronth = maxHrsPeronth;
+    }
+
+    // method to compute wage
+    public void computeEmpWage() {
 
         // Variables
         int empHrs = 0;
-        int empWage = 0;
         int totalEmpWage = 0;
         int totalWorkingDays = 0;
         int totalEmpHrs = 0;
@@ -17,7 +30,7 @@ public class EmpWageBuilder {
             totalWorkingDays++;
             int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 
-			 // Case Checking
+        // Case Checking
             switch (empCheck) {
                 case IS_PART_TIME:
                     empHrs = 4;
@@ -34,14 +47,18 @@ public class EmpWageBuilder {
         }
         totalEmpWage = totalEmpHrs * empRatePerHr;
         System.out.println("Total Employee Wage for company " + company + ": " + totalEmpWage + "\n");
-        return totalEmpWage;
-    }
+	}
 
-	//main
     public static void main(String[] args) throws Exception {
 
-        System.out.println("...Calc Emp wage for multiple companies...");
-        computeEmpWage("Dmart", 20, 2, 10);
-        computeEmpWage("Reliance", 10, 4, 20);
-    }
+    	System.out.println("...save wage for multiple companies...");
+
+        // creating objects for companies
+        EmpWageBuilder dMart = new EmpWageBuilder("Dmart", 20, 2, 10);
+        EmpWageBuilder reliance = new EmpWageBuilder("Reliance", 10, 4, 20);
+
+        // Method calls to compute wage
+        dMart.computeEmpWage();
+        reliance.computeEmpWage();
+	}
 }
