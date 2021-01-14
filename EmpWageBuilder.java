@@ -3,7 +3,7 @@ public class EmpWageBuilder {
     public static final int IS_FULL_TIME = 2;
 
     // method for wage computation
-    public static int computeEmpWage(String company, int empRatePerHr, int noOfWorkingDays, int maxHrsPeronth) {
+    public static int computeEmpWage(String company, int empRatePerHr, int noOfWorkingDays, int maxHrsPermonth) {
 
         // Variables
         int empHrs = 0;
@@ -13,7 +13,7 @@ public class EmpWageBuilder {
         int totalEmpHrs = 0;
 
         // Computation
-        while (totalEmpHrs <= maxHrsPeronth && totalWorkingDays < noOfWorkingDays) {
+        while (totalEmpHrs <= maxHrsPermonth && totalWorkingDays < noOfWorkingDays) {
             totalWorkingDays++;
             int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 
