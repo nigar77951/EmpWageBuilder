@@ -62,8 +62,11 @@ public class EmpWageBuilderArray {
         EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
 
     // Invoking fn's through object
-    empWageBuilder.addCompanyEmpWage("Dmart", 20, 2, 10);
-        empWageBuilder.addCompanyEmpWage("Reliance", 10, 4, 20);
+        empWageBuilder.addCompanyEmpWage("Google", 20, 2, 10);
+        empWageBuilder.addCompanyEmpWage("Facebook", 40, 2, 10);
+        empWageBuilder.addCompanyEmpWage("Amazon", 30, 2, 10);
+        empWageBuilder.addCompanyEmpWage("Wipro", 25, 2, 10);
+        empWageBuilder.addCompanyEmpWage("Tcs", 20, 2, 10);
 
         // Method call to compute wage
         empWageBuilder.computeEmpWage();
