@@ -6,14 +6,14 @@ public class EmpWageBuilder {
     private final String company;
     private final int empRatePerHr;
     private final int noOfWorkingDays;
-    private final int maxHrsPeronth;
+    private final int maxHrsPermonth;
 
     // Constructor of mtd EmpWageBuilder
-    public EmpWageBuilder(String company, int empRatePerHr, int noOfWorkingDays, int maxHrsPeronth) {
+    public EmpWageBuilder(String company, int empRatePerHr, int noOfWorkingDays, int maxHrsPermonth) {
         this.company = company;
         this.empRatePerHr = empRatePerHr;
         this.noOfWorkingDays = noOfWorkingDays;
-        this.maxHrsPeronth = maxHrsPeronth;
+        this.maxHrsPermonth = maxHrsPermonth;
     }
 
     // method to compute wage
@@ -26,7 +26,7 @@ public class EmpWageBuilder {
         int totalEmpHrs = 0;
 
         // Computation
-        while (totalEmpHrs <= maxHrsPeronth && totalWorkingDays < noOfWorkingDays) {
+        while (totalEmpHrs <= maxHrsPermonth && totalWorkingDays < noOfWorkingDays) {
             totalWorkingDays++;
             int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 
